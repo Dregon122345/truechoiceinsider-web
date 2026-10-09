@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>True Choice Insider - Unfiltered Consumer Investigations & Lab Tests</title>
-    <meta name="description" content="We independently test, review, and analyze health supplements and wellness products. Discover the truth behind proprietary blends and marketing claims.">
+    <title>True Choice Insider - Unfiltered Consumer Investigations</title>
+    <meta name="description" content="We investigate wellness products, digital programs, and consumer goods. Discover the truth behind marketing hype, proprietary blends, and pricing traps.">
     
     <link rel="canonical" href="https://truechoiceinsider.com/" />
     <link rel="icon" type="image/webp" href="https://truechoiceinsider.com/favicon.webp?v=2">
@@ -18,21 +18,29 @@
         .header-title { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
         .header-title span { color: #0284c7; }
         
-        .hero { background: #1e293b; color: #fff; text-align: center; padding: 60px 20px; border-bottom: 5px solid #cbd5e1; }
-        .hero h1 { font-size: clamp(30px, 6vw, 42px); margin: 0 0 15px 0; color: #f8fafc; font-weight: 900; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #94a3b8; }
+        .hero { background: #1e293b; color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #cbd5e1; }
+        .hero h1 { font-size: clamp(28px, 5vw, 42px); margin: 0 0 15px 0; color: #f8fafc; font-weight: 900; line-height: 1.2; }
+        .hero p { font-size: 1.15rem; max-width: 750px; margin: 0 auto; color: #94a3b8; }
         
-        /* Main Container */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .section-title { font-size: 24px; color: #0f172a; margin-bottom: 30px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; display: inline-block; font-weight: 800; }
+        /* Methodology Section (What We Do Different) */
+        .methodology { background: #fff; padding: 50px 20px; border-bottom: 1px solid #e2e8f0; }
+        .method-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .method-inner h2 { font-size: 26px; color: #0f172a; margin-top: 0; margin-bottom: 35px; font-weight: 800; }
+        .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .method-box { padding: 30px 20px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .method-box:hover { transform: translateY(-5px); border-color: #0284c7; }
+        .method-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .method-title { font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 10px; }
+        .method-text { font-size: 0.95rem; color: #475569; margin: 0; }
+
+        /* Main Container & Investigation Cards */
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .section-title { font-size: 24px; color: #0f172a; margin-bottom: 35px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; display: inline-block; font-weight: 800; }
         
-        /* Grid Layout */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
-        /* Investigation Cards */
         .card { background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .card-tag { background: #0284c7; color: #fff; font-size: 12px; font-weight: bold; text-transform: uppercase; padding: 5px 10px; display: inline-block; width: max-content; margin: 20px 20px 0; border-radius: 4px; }
+        .card-tag { background: #0284c7; color: #fff; font-size: 11px; font-weight: bold; text-transform: uppercase; padding: 5px 10px; display: inline-block; width: max-content; margin: 20px 20px 0; border-radius: 4px; letter-spacing: 0.5px; }
         .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .card-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 10px 0; line-height: 1.3; }
         .card-excerpt { font-size: 0.95rem; color: #475569; margin-bottom: 20px; flex-grow: 1; }
@@ -43,7 +51,8 @@
         footer { background: #0f172a; color: #64748b; text-align: center; padding: 40px 20px; margin-top: 60px; font-size: 14px; border-top: 3px solid #0284c7; }
         
         @media (max-width: 768px) {
-            .hero { padding: 40px 20px; }
+            .hero { padding: 50px 20px; }
+            .methodology { padding: 40px 20px; }
             .grid-container { grid-template-columns: 1fr; }
         }
     </style>
@@ -54,15 +63,39 @@
         <div class="header-title"><span>[!]</span> TRUE CHOICE INSIDER</div>
     </header>
 
+    <!-- Broad Hero Section -->
     <section class="hero">
-        <h1>Exposing The Supplement Industry.</h1>
-        <p>We don't trust marketing claims. We verify labels, run independent analysis, and expose hidden proprietary blends so you can buy with confidence.</p>
+        <h1>Unfiltered Consumer Investigations.</h1>
+        <p>From physical wellness products to digital programs, we investigate the industry to uncover the truth behind marketing hype, hidden formulas, and pricing traps.</p>
     </section>
 
-    <main class="container">
-        
-        <h2 class="section-title">Latest Lab Tests & Investigations</h2>
+    <!-- Our Methodology / How We Are Different -->
+    <section class="methodology">
+        <div class="method-inner">
+            <h2>Why We Are Different</h2>
+            <div class="method-grid">
+                <div class="method-box">
+                    <span class="method-icon">🔬</span>
+                    <div class="method-title">Label & Lab Audits</div>
+                    <p class="method-text">We don't just read the front of the box. We break down hidden proprietary blends, analyze clinical dosages, and run independent safety audits.</p>
+                </div>
+                <div class="method-box">
+                    <span class="method-icon">⚖️</span>
+                    <div class="method-title">Financial Watchdog</div>
+                    <p class="method-text">We expose aggressive auto-ship subscriptions and calculate the true cost-per-serving to ensure you are never overpaying for cheap ingredients.</p>
+                </div>
+                <div class="method-box">
+                    <span class="method-icon">🚫</span>
+                    <div class="method-title">Zero Fake Fluff</div>
+                    <p class="method-text">We are sick of fake 5-star reviews. If a product has a side effect, a terrible refund policy, or a hidden danger, we put it in bold letters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Latest Reviews Grid -->
+    <main class="container">
+        <h2 class="section-title">Latest Investigations & Reviews</h2>
         <div class="grid-container">
             
             <!-- YU Sleep -->
@@ -71,7 +104,7 @@
                 <div class="card-content">
                     <h3 class="card-title">YU Sleep Review: Scam or Science? The Label Warning</h3>
                     <p class="card-excerpt">We exposed the 637mg proprietary blend, verified the 0.9mg melatonin micro-dose, and issued a critical safety warning regarding SSRI interactions.</p>
-                    <a href="/yu-sleep/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/yu-sleep/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -81,7 +114,7 @@
                 <div class="card-content">
                     <h3 class="card-title">XenBurn Review: I Lab-Tested The Weight Loss Patch</h3>
                     <p class="card-excerpt">Do transdermal patches actually work? We sent XenBurn to an independent lab to test for heavy metals and verify the active caffeine and forskolin.</p>
-                    <a href="/xenburn/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/xenburn/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -91,7 +124,17 @@
                 <div class="card-content">
                     <h3 class="card-title">Mighty-K9 Review: What Vets Aren't Telling You</h3>
                     <p class="card-excerpt">An independent breakdown of the Mighty-K9 formula. Is this joint and vitality supplement actually worth the premium price tag for your dog?</p>
-                    <a href="/mighty-k9/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/mighty-k9/" class="card-btn">Read Investigation ➔</a>
+                </div>
+            </article>
+
+            <!-- Energy Revolution System -->
+            <article class="card">
+                <div class="card-tag">Digital Program</div>
+                <div class="card-content">
+                    <h3 class="card-title">Energy Revolution System: Scam or Legit?</h3>
+                    <p class="card-excerpt">We review the claims made by this digital energy system. Is it possible to rewire your body's fatigue response using their digital methods?</p>
+                    <a href="/energy-revolution-system/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -101,7 +144,7 @@
                 <div class="card-content">
                     <h3 class="card-title">ProDentim Analysis: Probiotics for Teeth?</h3>
                     <p class="card-excerpt">We investigate the science behind oral probiotics and whether melting this candy-like supplement actually restores receding gums and bad breath.</p>
-                    <a href="/prodentim/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/prodentim/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -111,7 +154,7 @@
                 <div class="card-content">
                     <h3 class="card-title">Fimavyn Review: The Truth About The Formula</h3>
                     <p class="card-excerpt">A deep dive into the Fimavyn ingredient label, pricing structure, and verified customer complaints. Find out if it actually delivers results.</p>
-                    <a href="/fimavyn/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/fimavyn/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -121,17 +164,7 @@
                 <div class="card-content">
                     <h3 class="card-title">Femicore Exposed: Label & Ingredient Audit</h3>
                     <p class="card-excerpt">An unfiltered look at Femicore. We separate the marketing hype from the actual clinical science behind its primary active ingredients.</p>
-                    <a href="/femicore/" class="card-btn">Read Full Investigation ➔</a>
-                </div>
-            </article>
-
-            <!-- Energy Revolution System -->
-            <article class="card">
-                <div class="card-tag">Digital Program</div>
-                <div class="card-content">
-                    <h3 class="card-title">Energy Revolution System: Scam or Legit?</h3>
-                    <p class="card-excerpt">We review the claims made by this digital energy system. Is it possible to rewire your body's fatigue response using their methods?</p>
-                    <a href="/energy-revolution-system/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/femicore/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -141,7 +174,7 @@
                 <div class="card-content">
                     <h3 class="card-title">Roll-On Relief Review: Does It Actually Numb Pain?</h3>
                     <p class="card-excerpt">An analysis of the active soothing agents in this topical roll-on. We compare its effectiveness against standard over-the-counter creams.</p>
-                    <a href="/roll-on-relief/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/roll-on-relief/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -151,7 +184,7 @@
                 <div class="card-content">
                     <h3 class="card-title">SelfPlus Age Review: The Anti-Aging Claims Tested</h3>
                     <p class="card-excerpt">Can a supplement actually slow down cellular aging? We look at the clinical data behind the SelfPlus Age formulation and its true cost.</p>
-                    <a href="/selfplus-age/" class="card-btn">Read Full Investigation ➔</a>
+                    <a href="/selfplus-age/" class="card-btn">Read Investigation ➔</a>
                 </div>
             </article>
 
@@ -160,7 +193,7 @@
 
     <footer>
         &copy; 2026 True Choice Insider. All rights reserved. <br><br>
-        Disclaimer: We independently research consumer wellness products. Our reviews may contain affiliate links, meaning we may receive a commission if you purchase through them at no extra cost to you. The statements on this site have not been evaluated by the FDA. Products are not intended to diagnose, treat, or cure any disease.
+        Disclaimer: We independently research consumer wellness and digital products. Our reviews may contain affiliate links, meaning we may receive a commission if you purchase through them at no extra cost to you. The statements on this site have not been evaluated by the FDA. Products are not intended to diagnose, treat, or cure any disease.
     </footer>
 
 </body>
