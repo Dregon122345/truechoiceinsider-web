@@ -6,67 +6,112 @@
     <title>True Choice Insider - Unfiltered Consumer Investigations</title>
     <meta name="description" content="We investigate wellness products, digital programs, and consumer goods. Discover the truth behind marketing hype, proprietary blends, and pricing traps.">
     
+    <!-- CANONICAL TAG -->
     <link rel="canonical" href="https://truechoiceinsider.com/" />
+    
+    <!-- OPEN GRAPH & TWITTER TAGS (SEO Boost for Sharing) -->
+    <meta property="og:title" content="True Choice Insider - Unfiltered Consumer Investigations" />
+    <meta property="og:description" content="Exposing marketing hype, proprietary blends, and checkout traps in the wellness and digital product industry." />
+    <meta property="og:url" content="https://truechoiceinsider.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/webp" href="https://truechoiceinsider.com/favicon.webp?v=2">
 
+    <!-- HOMEPAGE STRUCTURED DATA (WebSite & Organization Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://truechoiceinsider.com/#website",
+          "url": "https://truechoiceinsider.com/",
+          "name": "True Choice Insider",
+          "description": "Unfiltered Consumer Investigations & Product Audits",
+          "publisher": {
+            "@id": "https://truechoiceinsider.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://truechoiceinsider.com/#organization",
+          "name": "True Choice Insider",
+          "url": "https://truechoiceinsider.com/"
+        }
+      ]
+    }
+    </script>
+
     <style>
+        /* CSS RESET & CORE VARIABLES */
         *, *::before, *::after { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #334155; line-height: 1.6; }
+        html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #334155; line-height: 1.6; -webkit-font-smoothing: antialiased; }
         
         /* Header & Hero */
-        header { background-color: #0f172a; color: #fff; padding: 15px 20px; font-family: monospace; border-bottom: 3px solid #0284c7; text-align: center; }
-        .header-title { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+        header { background-color: #0f172a; color: #fff; padding: 18px 20px; font-family: monospace; border-bottom: 3px solid #0284c7; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header-title { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: bold; letter-spacing: 1px; margin: 0; }
+        .header-title a { color: #fff; text-decoration: none; }
         .header-title span { color: #0284c7; }
         
-        .hero { background: #1e293b; color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #cbd5e1; }
-        .hero h1 { font-size: clamp(28px, 5vw, 42px); margin: 0 0 15px 0; color: #f8fafc; font-weight: 900; line-height: 1.2; }
-        .hero p { font-size: 1.15rem; max-width: 750px; margin: 0 auto; color: #94a3b8; }
+        .hero { background: #1e293b; color: #fff; text-align: center; padding: 80px 20px; border-bottom: 5px solid #cbd5e1; }
+        .hero h1 { font-size: clamp(28px, 6vw, 48px); margin: 0 0 20px 0; color: #f8fafc; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); max-width: 800px; margin: 0 auto; color: #cbd5e1; }
         
         /* Methodology Section (What We Do Different) */
-        .methodology { background: #fff; padding: 50px 20px; border-bottom: 1px solid #e2e8f0; }
+        .methodology { background: #fff; padding: 60px 20px; border-bottom: 1px solid #e2e8f0; }
         .method-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .method-inner h2 { font-size: 26px; color: #0f172a; margin-top: 0; margin-bottom: 35px; font-weight: 800; }
+        .method-inner h2 { font-size: clamp(24px, 5vw, 32px); color: #0f172a; margin-top: 0; margin-bottom: 40px; font-weight: 800; }
         .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .method-box { padding: 30px 20px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .method-box:hover { transform: translateY(-5px); border-color: #0284c7; }
-        .method-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-        .method-title { font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 10px; }
-        .method-text { font-size: 0.95rem; color: #475569; margin: 0; }
+        .method-box { padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; transition: transform 0.3s ease, border-color 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .method-box:hover { transform: translateY(-5px); border-color: #0284c7; box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .method-icon { font-size: 2.8rem; margin-bottom: 15px; display: block; }
+        .method-title { font-size: 1.25rem; font-weight: 900; color: #0f172a; margin-bottom: 12px; }
+        .method-text { font-size: 1rem; color: #475569; margin: 0; }
 
         /* Main Container & Investigation Cards */
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .section-title { font-size: 24px; color: #0f172a; margin-bottom: 35px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; display: inline-block; font-weight: 800; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .section-title { font-size: clamp(22px, 5vw, 28px); color: #0f172a; margin-bottom: 40px; border-bottom: 3px solid #0284c7; padding-bottom: 10px; display: inline-block; font-weight: 900; }
         
         .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; overflow: hidden; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .card-tag { background: #0284c7; color: #fff; font-size: 11px; font-weight: bold; text-transform: uppercase; padding: 5px 10px; display: inline-block; width: max-content; margin: 20px 20px 0; border-radius: 4px; letter-spacing: 0.5px; }
-        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 10px 0; line-height: 1.3; }
-        .card-excerpt { font-size: 0.95rem; color: #475569; margin-bottom: 20px; flex-grow: 1; }
-        .card-btn { text-align: center; background: #f1f5f9; color: #0f172a; padding: 12px; text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.2s; border: 1px solid #cbd5e1; }
+        .card { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.04); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: #cbd5e1; }
+        
+        .card-tag { background: #0284c7; color: #fff; font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 6px 12px; display: inline-block; width: max-content; margin: 25px 25px 0; border-radius: 4px; letter-spacing: 0.5px; }
+        .card-tag.digital { background: #7c3aed; } /* Custom color for digital products */
+        
+        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 12px 0; line-height: 1.3; }
+        .card-excerpt { font-size: 1rem; color: #475569; margin-bottom: 25px; flex-grow: 1; line-height: 1.6; }
+        
+        /* Mobile Optimized CTA Button */
+        .card-btn { text-align: center; background: #f1f5f9; color: #0f172a; padding: 0 20px; text-decoration: none; font-weight: 800; border-radius: 6px; transition: 0.2s; border: 1px solid #cbd5e1; min-height: 52px; display: flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box; }
         .card-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; }
 
         /* Footer */
-        footer { background: #0f172a; color: #64748b; text-align: center; padding: 40px 20px; margin-top: 60px; font-size: 14px; border-top: 3px solid #0284c7; }
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 50px 20px; margin-top: 80px; font-size: 14px; border-top: 4px solid #0284c7; }
         
+        /* Mobile Breakpoints */
         @media (max-width: 768px) {
-            .hero { padding: 50px 20px; }
-            .methodology { padding: 40px 20px; }
-            .grid-container { grid-template-columns: 1fr; }
+            .hero { padding: 60px 20px; }
+            .methodology { padding: 50px 20px; }
+            .container { margin: 40px auto; }
+            .grid-container { grid-template-columns: 1fr; gap: 25px; }
+            .card-content { padding: 20px; }
+            .card-tag { margin: 20px 20px 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-title"><span>[!]</span> TRUE CHOICE INSIDER</div>
+        <h1 class="header-title"><a href="/"><span>[!]</span> TRUE CHOICE INSIDER</a></h1>
     </header>
 
     <!-- Broad Hero Section -->
     <section class="hero">
         <h1>Unfiltered Consumer Investigations.</h1>
-        <p>From physical wellness products to digital programs, we investigate the industry to uncover the truth behind marketing hype, hidden formulas, and pricing traps.</p>
+        <p>From physical wellness supplements to digital mindset programs, we investigate the industry to uncover the truth behind marketing hype, hidden formulas, and pricing traps.</p>
     </section>
 
     <!-- Our Methodology / How We Are Different -->
@@ -97,6 +142,26 @@
     <main class="container">
         <h2 class="section-title">Latest Investigations & Reviews</h2>
         <div class="grid-container">
+            
+            <!-- NEW: The Last Wish -->
+            <article class="card">
+                <div class="card-tag digital">Mindset Program</div>
+                <div class="card-content">
+                    <h3 class="card-title">The Last Wish Review: Does The 7-Second Ritual Work?</h3>
+                    <p class="card-excerpt">We investigate the viral manifestation audio. Discover the actual psychological science behind it, and see our warning regarding the checkout upsell traps.</p>
+                    <a href="/the-last-wish/" class="card-btn">Read Investigation ➔</a>
+                </div>
+            </article>
+
+            <!-- NEW: The Brain Song -->
+            <article class="card">
+                <div class="card-tag digital">Audio Audit</div>
+                <div class="card-content">
+                    <h3 class="card-title">The Brain Song: Acoustic Spectrogram Lab Test</h3>
+                    <p class="card-excerpt">Is it a scam? We ran a spectral analysis on The Brain Song's audio files. See the acoustic forensics verifying the 40Hz Gamma Isochronic Pulses.</p>
+                    <a href="/the-brain-song/" class="card-btn">Read Investigation ➔</a>
+                </div>
+            </article>
             
             <!-- YU Sleep -->
             <article class="card">
@@ -130,7 +195,7 @@
 
             <!-- Energy Revolution System -->
             <article class="card">
-                <div class="card-tag">Digital Program</div>
+                <div class="card-tag digital">Digital Program</div>
                 <div class="card-content">
                     <h3 class="card-title">Energy Revolution System: Scam or Legit?</h3>
                     <p class="card-excerpt">We review the claims made by this digital energy system. Is it possible to rewire your body's fatigue response using their digital methods?</p>
@@ -193,7 +258,7 @@
 
     <footer>
         &copy; 2026 True Choice Insider. All rights reserved. <br><br>
-        Disclaimer: We independently research consumer wellness and digital products. Our reviews may contain affiliate links, meaning we may receive a commission if you purchase through them at no extra cost to you. The statements on this site have not been evaluated by the FDA. Products are not intended to diagnose, treat, or cure any disease.
+        <span style="font-size: 12px;">Disclaimer: We independently research consumer wellness and digital products. Our reviews may contain affiliate links, meaning we may receive a commission if you purchase through them at no extra cost to you. The statements on this site have not been evaluated by the FDA. Products are not intended to diagnose, treat, or cure any disease.</span>
     </footer>
 
 </body>
