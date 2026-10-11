@@ -120,8 +120,8 @@
         ul, ol { padding-left: 20px; margin-bottom: 20px; }
         li { margin-bottom: 10px; font-size: 1.1rem; }
         
-        /* E-E-A-T Author Meta Tag */
-        .author-meta { font-size: clamp(11px, 3vw, 13px); color: #475569; font-weight: bold; margin-bottom: 20px; background: var(--light-bg); padding: 12px 15px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; }
+        /* E-E-A-T Author Meta Tag (Strict 1-Line Mobile Fix) */
+        .author-meta { font-size: clamp(9px, 2.5vw, 12px); color: #475569; font-weight: bold; margin-bottom: 20px; background: var(--light-bg); padding: 10px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
 
         /* Mobile-Optimized Images */
         .image-box { margin: 25px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: #f8fafc; }
@@ -199,6 +199,8 @@
     <main class="container">
         <article>
             <h1>The Last Wish Review (2026): Does The 7-Second Ritual Work or Is It a Scam?</h1>
+            
+            <!-- FIXED 1-LINE AUTHOR BOX -->
             <div class="author-meta">🎧 INVESTIGATION BY: ALEX | ⏱ 6 MIN READ | UPDATED: OCT 2026</div>
 
             <!-- HERO IMAGE PLACEHOLDER (Eager Loading for LCP Optimization) -->
