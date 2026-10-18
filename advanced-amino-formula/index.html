@@ -143,7 +143,9 @@
         .header-title a { color: #fff; text-decoration: none; }
         .header-title span { color: var(--primary); }
         
-        .breadcrumbs-ui { font-size: 12px; color: #64748b; margin-top: 10px; margin-bottom: 15px; }
+        /* BREADCRUMBS - MOBILE OPTIMIZED (No wrap, hidden scrollbar) */
+        .breadcrumbs-ui { font-size: 12px; color: #64748b; margin-top: 10px; margin-bottom: 15px; white-space: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+        .breadcrumbs-ui::-webkit-scrollbar { display: none; }
         .breadcrumbs-ui a { color: var(--primary); text-decoration: none; font-weight: 600; }
         .breadcrumbs-ui a:hover { text-decoration: underline; }
 
@@ -156,8 +158,8 @@
         ul, ol { padding-left: 20px; margin-bottom: 20px; }
         li { margin-bottom: 10px; font-size: 1.1rem; }
         
-        /* E-E-A-T Author Meta Tag */
-        .author-meta { font-size: clamp(9px, 2.5vw, 12px); color: #475569; font-weight: bold; margin-bottom: 25px; background: var(--light-bg); padding: 10px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+        /* E-E-A-T Author Meta Tag (Mobile wrap allowed) */
+        .author-meta { font-size: clamp(10px, 2.5vw, 12px); color: #475569; font-weight: bold; margin-bottom: 25px; background: var(--light-bg); padding: 12px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; line-height: 1.5; }
 
         /* Mobile-Optimized Images */
         .image-box { margin: 25px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: #f8fafc; }
@@ -218,16 +220,23 @@
         .legal-disclaimer { margin-top: 50px; padding: 20px; background-color: #f1f5f9; border-top: 1px solid #cbd5e1; font-size: 11px; color: #64748b; line-height: 1.6; text-align: justify; }
         footer { text-align: center; font-size: 13px; color: #64748b; padding: 20px; background: #f8fafc; }
 
+        /* --- MOBILE OPTIMIZATION SPECIFICS --- */
         @media (max-width: 768px) {
             .container { padding: 15px; }
-            h1 { margin-top: 10px; }
-            h2 { margin-top: 35px; }
-            .toc { padding: 20px; margin: 25px 0; }
-            .tldr-box, .lab-box, .red-flag-box, .mid-cta-box { padding: 20px; margin-bottom: 25px; }
-            .trust-box { padding: 25px 15px; }
-            .cta-btn { padding: 18px 15px; font-size: 1.05rem; }
+            h1 { margin-top: 10px; font-size: 28px; }
+            h2 { margin-top: 35px; font-size: 22px; }
+            /* Better readability on small screens */
+            p, ul, ol, li { font-size: 1rem; line-height: 1.6; }
+            .toc { padding: 18px; margin: 25px 0; }
+            /* Expand tap targets for TOC links on mobile */
+            .toc li { margin-bottom: 16px; }
+            .tldr-box, .lab-box, .red-flag-box, .mid-cta-box { padding: 18px; margin-bottom: 20px; }
+            .trust-box { padding: 20px 15px; }
+            .cta-btn { padding: 16px 15px; font-size: 1rem; }
+            .comment-form { padding: 15px; }
+            .comment { padding: 15px; }
             .reply { margin-left: 10px; padding: 15px; }
-            .lab-table th, .lab-table td { padding: 10px; font-size: 14px; }
+            .lab-table th, .lab-table td { padding: 10px; font-size: 13px; }
         }
     </style>
 </head>
@@ -239,7 +248,7 @@
 
     <main class="container" role="main">
         
-        <!-- VISUAL BREADCRUMBS FOR SEO & UX -->
+        <!-- VISUAL BREADCRUMBS FOR SEO & UX (Scrollable on mobile) -->
         <nav aria-label="Breadcrumb" class="breadcrumbs-ui">
             <a href="/">Home</a> &rsaquo; 
             <a href="/">Muscle & Recovery</a> &rsaquo; 
@@ -252,7 +261,6 @@
             <div class="author-meta">🔍 INVESTIGATION BY: RICHARD | ⏱ 8 MIN READ | UPDATED: <time datetime="2026-10-18">OCT 18, 2026</time></div>
 
             <figure class="image-box">
-                <!-- Using your generated midjourney hero image converted to webp -->
                 <img src="1000011588.webp" alt="First-person view of a hand holding the 150-tablet Advanced Amino Formula bottle in an office setting" width="800" height="450" loading="eager" title="Advanced Amino Formula Supplement">
                 <figcaption class="image-caption">If you are over 40 and tired of whey protein causing extreme stomach bloating, you just want to know if Advanced Amino Formula actually works. We secured the physical bottle to investigate the exact dosages and actual cost per serving.</figcaption>
             </figure>
@@ -292,7 +300,6 @@
                     <p>However, their <strong>core premise is actually true:</strong> Free-form essential amino acids have a Nitrogen Utilization (NNU) rate of up to 99%. This means almost zero nitrogen waste is filtered through your kidneys, making EAAs vastly superior for aging organs.</p>
                 </div>
                 
-                <!-- COA Image Slot for Heavy Metal / Purity Audit -->
                 <figure class="image-box">
                     <img src="amino-coa.webp" alt="Top-down flat lay photograph of a clinical Certificate of Analysis (COA) printed on an A4 sheet, next to the Advanced Amino Formula bottle" width="800" height="533" loading="lazy" title="Advanced Amino Formula Clinical Safety Audit">
                     <figcaption class="image-caption">We ensure safety by looking for independent heavy metal screenings (ICP-MS) and purity audits. While the manufacturer's facility is regulated, always verify that your batch is free from Pb, Hg, and Cd contaminants.</figcaption>
@@ -311,7 +318,6 @@
                 <p>One of the biggest red flags in the supplement industry is the "Proprietary Blend"—a legal loophole where companies list ingredients but hide the exact amounts. Unfortunately, Advanced Amino Formula uses this exact tactic.</p>
                 
                 <figure class="image-box">
-                    <!-- Using your real downloaded label image converted to webp -->
                     <img src="1000011587.webp" alt="Official Supplement Facts Label for Advanced Amino Formula showing 5,000mg proprietary blend of 8 amino acids" width="800" height="800" loading="lazy" title="Advanced Amino Formula Official Label">
                     <figcaption class="image-caption">We audited the physical Supplement Facts label. As you can see, while the total volume of 5,000mg per serving is excellent, the manufacturer chooses to hide the exact milligram breakdown of the individual amino acids.</figcaption>
                 </figure>
@@ -374,7 +380,6 @@
                 <p><strong>The Cost Breakdown:</strong> At 5 tablets per serving, one bottle provides 30 complete servings. That breaks down to just <strong>$1.33 per day</strong>. This is physically cheaper than buying a premium tub of whey isolate, and vastly cheaper than a daily coffee.</p>
                 <p><strong>The Ultimate Safety Net:</strong> Advanced Bionutritionals offers a <strong>90-Day "Down-To-The-Last-Pill" Guarantee</strong>. This means you have 3 full months to test the formula. If your recovery doesn't improve or your stomach still feels bloated, you can return the empty bottles for a full refund of the purchase price.</p>
                 
-                <!-- MID-CONTENT CTA BUTTON -->
                 <div class="mid-cta-box">
                     <p>Secure The Official Formula & The 90-Day Guarantee Below:</p>
                     <a href="https://www.advancedbionutritionals.com/DS24/Advanced-Amino/Muscle-Mass-Loss/HD.htm#aff=Shivam459" class="cta-btn" style="margin: 15px 0 0 0;" target="_blank" rel="sponsored nofollow noopener" aria-label="Visit the official checkout for Advanced Amino Formula">Go To The Official Secure Checkout >></a>
@@ -406,7 +411,6 @@
                     <button type="button" aria-label="Submit your comment" onclick="alert('Your comment has been submitted for review.')">Submit Comment</button>
                 </form>
 
-                <!-- Thread 1: Cost Justification -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>David_G</b> • <time datetime="2026-10-17">1 day ago</time></div>
                     <div class="comment-body">$40 for a bottle of pills seems really expensive when I can buy a giant tub of whey protein at Costco for $50. Is it really worth the swap?</div>
@@ -416,7 +420,6 @@
                     <div class="comment-body">It comes down to absorption, David. That $50 tub of whey has a lot of caloric waste and requires massive digestion energy. At $1.33 per serving, these free-form aminos absorb almost instantly with 99% nitrogen utilization. If whey doesn't bloat you, stick with whey. If it does, this is worth every penny.</div>
                 </div>
 
-                <!-- Thread 2: Dosage Transparency -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Science_Guy_88</b> • <time datetime="2026-10-16">2 days ago</time></div>
                     <div class="comment-body">I can't stand when companies use "proprietary blends". Why hide the exact amount of Leucine? It makes me think it's underdosed.</div>
@@ -426,7 +429,6 @@
                     <div class="comment-body">We agree 100%. It is our biggest criticism of the product. The only saving grace is that the *total* blend is a massive 5,000mg. Even if the ratio isn't perfect, 5 grams of EAAs is clinically significant enough to trigger protein synthesis.</div>
                 </div>
 
-                <!-- Thread 3: Pill Size -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Martha_W</b> • <time datetime="2026-10-15">3 days ago</time></div>
                     <div class="comment-body">Five tablets per serving sounds like a choking hazard. Are these horse pills?</div>
@@ -436,7 +438,6 @@
                     <div class="comment-body">Hi Martha. Because they pack 1,000mg of aminos into each tablet to reach the 5g dose, they are fairly large. However, unlike capsules, these tablets can be easily crushed into a fine powder and mixed with applesauce or water without degrading the ingredients.</div>
                 </div>
 
-                <!-- Thread 4: Dropping Whey completely -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>GymRat_Dan</b> • <time datetime="2026-10-14">4 days ago</time></div>
                     <div class="comment-body">If I completely drop my whey shakes and only take these 5 tablets after a workout, will I lose muscle mass?</div>
@@ -446,7 +447,6 @@
                     <div class="comment-body">No, Dan. Essential Amino Acids are the actual "building blocks" that your body extracts from whey anyway. By taking EAAs directly, you are just skipping the digestion middle-man. You will still trigger mTOR for muscle repair.</div>
                 </div>
 
-                <!-- Thread 5: Kidney Function -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Robert_71</b> • <time datetime="2026-10-13">5 days ago</time></div>
                     <div class="comment-body">My doctor told me to lower my protein intake because my kidney function is declining. Are amino acids safe for kidneys?</div>
@@ -456,7 +456,6 @@
                     <div class="comment-body">Robert, this is exactly where EAAs shine. Traditional protein creates nitrogen waste (ammonia) which taxes the kidneys. Free-form aminos have a 99% utilization rate, meaning almost zero waste for the kidneys to filter. *However, you must still clear this supplement with your nephrologist before starting.*</div>
                 </div>
 
-                <!-- Thread 6: The Missing Histidine -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Biohacker_Tim</b> • <time datetime="2026-10-12">6 days ago</time></div>
                     <div class="comment-body">I noticed your note about Histidine missing. Isn't that bad if it's not a complete 9-EAA profile?</div>
@@ -466,7 +465,6 @@
                     <div class="comment-body">It is a flaw based on outdated science (the company's FAQ claims Histidine is only essential for infants). While not ideal, adults generally maintain adequate Histidine levels from a normal diet, so the remaining 8 aminos will still synthesize protein effectively. But they should update their formula.</div>
                 </div>
 
-                <!-- Thread 7: The Empty Bottle Guarantee -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Skeptical_Susan</b> • <time datetime="2026-10-11">7 days ago</time></div>
                     <div class="comment-body">Does the 90-day guarantee really cover empty bottles? I've been burned by companies that say "unopened bottles only" in the fine print.</div>
@@ -476,7 +474,6 @@
                     <div class="comment-body">Yes, Susan. Advanced Bionutritionals has a strict "down-to-the-last-pill" policy. You can use the entire supply and if you aren't satisfied, ship the empty bottles back within 90 days for a refund. You are only responsible for the return shipping cost.</div>
                 </div>
 
-                <!-- Thread 8: Fake Amazon Sellers -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>PrimeBuyer_John</b> • <time datetime="2026-10-10">8 days ago</time></div>
                     <div class="comment-body">I saw this on Amazon for $10 cheaper. Is it safe to buy there to get the 2-day shipping?</div>
@@ -486,7 +483,6 @@
                     <div class="comment-body">NO. Do not buy this product on Amazon or eBay. There is a massive clone market right now selling counterfeit bottles filled with cheap maltodextrin. The manufacturer will also void your 90-day guarantee if you don't buy from their official site.</div>
                 </div>
 
-                <!-- Thread 9: Timing of Dose -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Mark_Lifter</b> • <time datetime="2026-10-09">9 days ago</time></div>
                     <div class="comment-body">Should I take all 5 tablets in the morning, or split them up throughout the day?</div>
@@ -496,7 +492,6 @@
                     <div class="comment-body">For maximum muscle protein synthesis, take all 5 tablets together. If you are lightly exercising, take them 20 minutes before or immediately after your workout to feed the muscles while they are most receptive.</div>
                 </div>
 
-                <!-- Thread 10: Age Bracket -->
                 <div class="comment" role="article">
                     <div class="c-meta"><b>Brenda_65</b> • <time datetime="2026-10-08">10 days ago</time></div>
                     <div class="comment-body">I am a 65-year-old woman who just wants to stop feeling weak when carrying groceries. Is this too intense for me?</div>
