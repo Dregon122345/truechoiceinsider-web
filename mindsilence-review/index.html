@@ -157,8 +157,9 @@
         ul, ol { padding-left: 20px; margin-bottom: 20px; }
         li { margin-bottom: 10px; font-size: 1.1rem; }
         
-        /* E-E-A-T Author Meta Tag */
-        .author-meta { font-size: clamp(10px, 2.5vw, 12px); color: #475569; font-weight: bold; margin-bottom: 25px; background: var(--light-bg); padding: 12px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; line-height: 1.5; }
+        /* E-E-A-T Author Meta Tag - FIXED FOR 1 LINE ON MOBILE */
+        .author-meta { font-size: clamp(9px, 2.5vw, 12px); color: #475569; font-weight: bold; margin-bottom: 25px; background: var(--light-bg); padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary); display: block; box-sizing: border-box; line-height: 1.5; white-space: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .author-meta::-webkit-scrollbar { display: none; }
 
         /* Mobile-Optimized Images */
         .image-box { margin: 25px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: #f8fafc; }
@@ -520,4 +521,3 @@
 
 </body>
 </html>
-
